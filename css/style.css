@@ -14,14 +14,22 @@ body{
 
     margin: auto;
     margin-top: 100px;
-    border: 1px solid rgba(128, 128, 128, 0.5);
+    border: 1px solid rgba(170, 170, 170, 0.5);
     border-radius: 10px;
     padding: 20px;
+
+    box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.1);
 }
 
 legend{
     margin: auto;
     font-size: 20px;
+}
+
+input{
+    color: rgb(110, 110, 110);
+    font-size: 15px;
+    padding: 5px;
 }
 
 .email,
@@ -37,14 +45,27 @@ legend{
 .submit,
 .reset{
     color: white;
+    font-size: 20px;
     height: 50px;
     width: 100px;
     background: rgb(15, 155, 255);
     border: none;
     border-radius: 10px;
     margin: 5px;
+
+    cursor: pointer;
 }
 
 .reset{
     background-color: rgb(221, 0, 0);
+}
+
+.submit:hover,
+.reset:hover{
+    opacity: 0.5;
+}
+
+.submit:active,
+.reset:active{
+    filter: brightness(80%);
 }
