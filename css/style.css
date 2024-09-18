@@ -32,6 +32,11 @@ input{
     padding: 5px;
 }
 
+
+input::placeholder{
+    color: rgb(183, 183, 183);
+}
+
 .email,
 .phone,
 .birthdate{
@@ -69,3 +74,4 @@ input{
 .reset:active{
     filter: brightness(80%);
 }
+
