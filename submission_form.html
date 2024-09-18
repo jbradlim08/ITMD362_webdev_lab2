@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Identity</title>
+        <link rel="stylesheet" media="screen" href="css/identity.css" />
+    </head>
+    <body>
+      
+        <div class="summary_form">
+            <div class="final_form_text">Final Form</div>
+            <div class="email">
+                <label>Email Address</label>
+                <div>:</div>
+                <div class="js-email"></div>
+            </div>
+            <div class="phone">
+                <label>Phone Number</label>
+                <div>:</div>
+                <div class="js-phone"></div>
+            </div>
+            <div class="birthdate">
+                <label>Date of Birth</label>
+                <div>:</div>
+                <div class="js-birthdate"></div>
+            </div>
+            <div class="change_form">
+                <a href="index.html">Change</a>
+            </div>
+        </div>
+        
+        <script>
+            const url = new URLSearchParams(window.location.search);
+            // format the email and phone
+            document.querySelector('.js-email').innerHTML = url.get('email');
+            document.querySelector('.js-phone').innerHTML = url.get('phone');
+
+            // format the birthdate
+            const birthdateRaw = url.get('birthdate');
+            if (birthdateRaw) {
+                const birthdate = new Date(birthdateRaw);
+                const options = { year: 'numeric', month: 'long', day: 'numeric' }; // format:  "Month dd, yyyy"
+                const formattedBirthdate = birthdate.toLocaleDateString(undefined, options);
+                document.querySelector('.js-birthdate').innerHTML = formattedBirthdate;
+            }
+        </script>
+        
+    </body>
+</html>
